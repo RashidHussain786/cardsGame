@@ -58,44 +58,45 @@ go run main.go
 Here is a brief description of each function in the program:
 
 -   **Create a New Deck**
-        To create a new deck, use the `newDeck()` function:
-    ```go
-    cards := newDeck()
-    ```
-    -   This function returns a new deck with all the card suits and values.
+    
+  To create a new deck, use the `newDeck()` function:
+  
+```go
+cards := newDeck()
+```
     
 -   **Print the Deck**
     
-        To print out each card in the deck along with its index, use the `print()` function:
-     ```go
-    cards.print()
-    ```
-   - **Shuffle the Deck**
+  To print out each card in the deck along with its index, use the `print()` function:
+```go
+cards.print()
+```
+- **Shuffle the Deck**
 
-	    To randomize the order of the cards in the deck, call the `shuffle()` method:
-		```go
-		cards.shuffle()
-     ```
-	- **Deal a Hand**
+  To randomize the order of the cards in the deck, call the `shuffle()` method:
+ ```go
+ cards.shuffle()
+ ```
+- **Deal a Hand**
 
-	    To deal a hand of cards, use the `deal()` function. It returns two decks: the hand and the remaining deck:
-		```go
-		hand, remainingDeck := deal(cards, 5)
-		```
-	- **Save the Deck to a File**
+  To deal a hand of cards, use the `deal()` function. It returns two decks: the hand and the remaining deck:
+```go
+ hand, remainingDeck := deal(cards, 5)
+```
+- **Save the Deck to a File**
 
-	    You can save the deck to a file using the `saveToFile()` method:
-		```go
-		err := cards.saveToFile("my_deck.txt")
-		```
-		- If an error occurs while saving the file, it will return the error.
-	- **Load a Deck from a File**
+  You can save the deck to a file using the `saveToFile()` method:
+```go
+err := cards.saveToFile("my_deck.txt")
+```
+  If an error occurs while saving the file, it will return the error.
+- **Load a Deck from a File**
 
-		To load a deck from a file, use the `newDeckFromFile()` function:
-		```go
-		loadedDeck := newDeckFromFile("my_deck.txt")
-		```
-		-   This function reads from a specified file and returns a new deck. If the file doesn't exist, it will exit the program.
+  To load a deck from a file, use the `newDeckFromFile()` function:
+```go
+loadedDeck := newDeckFromFile("my_deck.txt")
+```
+   This function reads from a specified file and returns a new deck. If the file doesn't exist, it will exit the program.
 ### Project Structure
 
 The project consists of the following files:
@@ -110,23 +111,23 @@ The project consists of the following files:
 Here’s an example of how to use the deck functions:
 package main
 ```go
-	func main() {
-	    cards := newDeck()          // Create a new deck
-	    cards.shuffle()             // Shuffle the deck
-	    cards.print()               // Print the shuffled deck
+func main() {
+    cards := newDeck()          // Create a new deck
+    cards.shuffle()             // Shuffle the deck
+    cards.print()               // Print the shuffled deck
 
-	    hand, remainingDeck := deal(cards, 5)  // Deal a hand of 5 cards
-	    hand.print()               // Print the dealt hand
-	    remainingDeck.print()       // Print the remaining deck
+    hand, remainingDeck := deal(cards, 5)  // Deal a hand of 5 cards
+    hand.print()               // Print the dealt hand
+    remainingDeck.print()       // Print the remaining deck
 
-	    err := cards.saveToFile("my_deck.txt") // Save the deck to a file
-	    if err != nil {
-	        fmt.Println("Error saving deck:", err)
-	    }
+    err := cards.saveToFile("my_deck.txt") // Save the deck to a file
+    if err != nil {
+	fmt.Println("Error saving deck:", err)
+    }
 
-	    loadedDeck := newDeckFromFile("my_deck.txt") // Load the deck from the file
-	    loadedDeck.print()            // Print the loaded deck
-	}
+    loadedDeck := newDeckFromFile("my_deck.txt") // Load the deck from the file
+    loadedDeck.print()            // Print the loaded deck
+}
 ```
 
 		
